@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Yusra Mall Nawada</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-luxury { font-family: 'Playfair Display', serif; }
+    </style>
+</head>
+<body class="bg-[#0b0f19] text-slate-100 overflow-x-hidden">
+
+    <!-- HEADER WITH HAMBURGER MENU -->
+    <header class="sticky top-0 z-50 backdrop-blur-xl bg-[#0b0f19]/95 border-b border-slate-800/60 shadow-lg shadow-black/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+
+            <!-- Branding Logo -->
+            <a href="index.html" class="flex items-center space-x-3 cursor-pointer group shrink-0">
+                <img src="images/yusramall.png"
+                     onerror="this.style.display='none'; document.getElementById('text-logo').style.display='flex';"
+                     alt="Yusra Mall Logo" class="h-10 sm:h-12 object-contain group-hover:scale-105 transition-transform">
+                
+                <div id="text-logo" class="hidden items-center space-x-3">
+                    <div class="h-10 w-10 sm:h-11 sm:w-11 bg-gradient-to-br from-amber-400 to-amber-600 rounded-xl flex items-center justify-center">
+                        <span class="font-luxury text-lg sm:text-xl font-bold text-slate-950">YM</span>
+                    </div>
+                    <div>
+                        <span class="font-luxury text-lg font-bold tracking-widest text-amber-400">YUSRA MALL</span>
+                        <p class="text-[9px] text-slate-400 uppercase tracking-widest -mt-1">Nawada, Bihar</p>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation (Hidden on Mobile) -->
+            <nav class="hidden sm:flex items-center space-x-8 text-sm font-medium tracking-wide">
+                <a href="index.html" class="text-amber-400 border-b-2 border-amber-400 pb-1">HOME</a>
+                <a href="about.html" class="text-slate-300 hover:text-amber-400 transition-colors pb-1">ABOUT US</a>
+                <a href="gallery.html" class="text-slate-300 hover:text-amber-400 transition-colors pb-1">GALLERY</a>
+                <a href="contact.html" class="text-slate-300 hover:text-amber-400 transition-colors pb-1">CONTACT US</a>
+            </nav>
+
+            <!-- Hamburger Button (Visible only on Mobile) -->
+            <button id="mobile-btn" class="sm:hidden text-amber-400 hover:text-white focus:outline-none p-2">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+
+        </div>
+
+        <!-- Mobile Dropdown Menu (Initially Hidden) -->
+        <div id="mobile-menu" class="hidden sm:hidden bg-[#0d1322] border-t border-slate-800 shadow-2xl absolute w-full left-0">
+            <div class="px-6 py-6 flex flex-col space-y-5 text-base font-medium tracking-wide">
+                <a href="index.html" class="text-amber-400 border-l-4 border-amber-400 pl-3">HOME</a>
+                <a href="about.html" class="text-slate-300 hover:text-amber-400 pl-4 transition-colors">ABOUT US</a>
+                <a href="gallery.html" class="text-slate-300 hover:text-amber-400 pl-4 transition-colors">GALLERY</a>
+                <a href="contact.html" class="text-slate-300 hover:text-amber-400 pl-4 transition-colors">CONTACT US</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- JavaScript for Toggle -->
+    <script>
+        const btn = document.getElementById('mobile-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+
+    <!-- ABOUT HERO SECTION -->
+    <section class="relative py-20 lg:py-32 overflow-hidden border-b border-slate-900">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-b from-[#0b0f19] via-[#0b0f19]/80 to-[#0b0f19] z-10"></div>
+            <img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1920&q=80" class="w-full h-full object-cover filter brightness-50 blur-sm" alt="Mall Background">
+        </div>
+        
+        <div class="relative z-20 max-w-4xl mx-auto text-center px-4">
+            <span class="text-amber-400 font-bold tracking-widest uppercase text-xs sm:text-sm mb-4 block">Discover Our Story</span>
+            <h1 class="font-luxury text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6">
+                The Heart of Shopping, Leisure, and Community.
+            </h1>
+            <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto">
+                At Yusra Mall, we take pride in bringing you an exceptional variety of stores designed to cater to every lifestyle and preference. From renowned national brands to beloved local favorites, we are Nawada's ultimate destination.
+            </p>
+        </div>
+    </section>
+
+    <!-- MISSION & VISION SECTION -->
+    <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            
+            <!-- MISSION CARD -->
+            <div class="bg-slate-900/50 border border-slate-800 p-8 sm:p-12 rounded-3xl hover:border-amber-400/30 transition-colors shadow-xl">
+                <div class="w-14 h-14 bg-amber-400/10 rounded-2xl flex items-center justify-center mb-6 border border-amber-400/20">
+                    <svg class="w-7 h-7 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                </div>
+                <h2 class="font-luxury text-3xl font-bold text-white mb-6">Our Mission</h2>
+                <div class="space-y-4 text-slate-400 text-sm sm:text-base leading-relaxed">
+                    <p>
+                        At Yusra Mall, our mission is to provide an exceptional shopping and lifestyle experience for everyone who walks through our doors. We are dedicated to offering a diverse mix of retail stores, dining options, entertainment zones, and leisure experiences—all conveniently located under one roof.
+                    </p>
+                    <p>
+                        Our goal is to make every visit to Yusra Mall seamless, convenient, and truly memorable, ensuring that each guest leaves with a sense of satisfaction and joy.
+                    </p>
+                    <p>
+                        We are committed to being the go-to destination for quality shopping, comfort, and entertainment in the community—making Yusra Mall not just a mall, but a place where families and friends of all ages come together to shop, dine, relax, and create lasting memories.
+                    </p>
+                </div>
+            </div>
+
+            <!-- VISION CARD -->
+            <div class="bg-slate-900/50 border border-slate-800 p-8 sm:p-12 rounded-3xl hover:border-amber-400/30 transition-colors shadow-xl">
+                <div class="w-14 h-14 bg-emerald-400/10 rounded-2xl flex items-center justify-center mb-6 border border-emerald-400/20">
+                    <svg class="w-7 h-7 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                </div>
+                <h2 class="font-luxury text-3xl font-bold text-white mb-6">Our Vision</h2>
+                <div class="space-y-4 text-slate-400 text-sm sm:text-base leading-relaxed">
+                    <p>
+                        At Yusra Mall, our vision is to be the region's most trusted, innovative, and dynamic shopping and entertainment destination. We strive to redefine the mall experience by setting new standards in customer service and creating a space where everyone feels welcome.
+                    </p>
+                    <p>
+                        Our vision is to build a vibrant and inclusive environment that not only meets but consistently exceeds the expectations of our visitors. By continuously evolving and expanding, we aim to meet the ever-changing needs of our community, making Yusra Mall a true hub of activity where people can shop, dine, relax, and enjoy life.
+                    </p>
+                    <p class="text-amber-400 font-medium italic pt-4">
+                        “Yusra Mall – A vibrant hub where innovation meets lifestyle.”
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 border-t border-slate-900 py-8 text-center">
+        <p class="text-xs text-slate-500">
+            📍 Yusra Mall, Khuri Bridge, Nawada, Bihar, 805110<br><br>
+            © 2026 Yusra Mall. All rights reserved.
+        </p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yusra Mall | The Heart of Nawada</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .font-luxury {
+            font-family: 'Playfair Display', serif;
+        }
+        .gold-glow:focus {
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-[#0b0f19] text-slate-100 overflow-x-hidden">
+
+   <!-- HEADER WITH HAMBURGER MENU -->
+    <header class="sticky top-0 z-50 backdrop-blur-xl bg-[#0b0f19]/95 border-b border-slate-800/60 shadow-lg shadow-black/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+
+            <!-- Branding Logo -->
+            <a href="index.html" class="flex items-center space-x-3 cursor-pointer group shrink-0">
+                <img src="images/yusramall.png"
+                     onerror="this.style.display='none'; document.getElementById('text-logo').style.display='flex';"
+                     alt="Yusra Mall Logo" class="h-10 sm:h-12 object-contain group-hover:scale-105 transition-transform">
+                
+                <div id="text-logo" class="hidden items-center space-x-3">
+                    <div class="h-10 w-10 sm:h-11 sm:w-11 bg-gradient-to-br from-amber-400 to-amber-600 rounded-xl flex items-center justify-center">
+                        <span class="font-luxury text-lg sm:text-xl font-bold text-slate-950">YM</span>
+                    </div>
+                    <div>
+                        <span class="font-luxury text-lg font-bold tracking-widest text-amber-400">YUSRA MALL</span>
+                        <p class="text-[9px] text-slate-400 uppercase tracking-widest -mt-1">Nawada, Bihar</p>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation (Hidden on Mobile) -->
+            <nav class="hidden sm:flex items-center space-x-8 text-sm font-medium tracking-wide">
+                <a href="index.html" class="text-amber-400 border-b-2 border-amber-400 pb-1">HOME</a>
+                <a href="about.html" class="text-slate-300 hover:text-amber-400 transition-colors pb-1">ABOUT US</a>
+                <a href="gallery.html" class="text-slate-300 hover:text-amber-400 transition-colors pb-1">GALLERY</a>
+                <a href="contact.html" class="text-slate-300 hover:text-amber-400 transition-colors pb-1">CONTACT US</a>
+            </nav>
+
+            <!-- Hamburger Button (Visible only on Mobile) -->
+            <button id="mobile-btn" class="sm:hidden text-amber-400 hover:text-white focus:outline-none p-2">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+
+        </div>
+
+        <!-- Mobile Dropdown Menu (Initially Hidden) -->
+        <div id="mobile-menu" class="hidden sm:hidden bg-[#0d1322] border-t border-slate-800 shadow-2xl absolute w-full left-0">
+            <div class="px-6 py-6 flex flex-col space-y-5 text-base font-medium tracking-wide">
+                <a href="index.html" class="text-amber-400 border-l-4 border-amber-400 pl-3">HOME</a>
+                <a href="about.html" class="text-slate-300 hover:text-amber-400 pl-4 transition-colors">ABOUT US</a>
+                <a href="gallery.html" class="text-slate-300 hover:text-amber-400 pl-4 transition-colors">GALLERY</a>
+                <a href="contact.html" class="text-slate-300 hover:text-amber-400 pl-4 transition-colors">CONTACT US</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- JavaScript for Toggle -->
+    <script>
+        const btn = document.getElementById('mobile-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+
+    <!-- 2. HERO SECTION (CINEMATIC EXPERIENCE) -->
+    <section id="home" class="relative h-[85vh] lg:h-[90vh] flex items-center justify-center overflow-hidden">
+        <!-- Video Placeholder / Background Overlay -->
+        <div class="absolute inset-0 z-0">
+            <!-- Smooth Sunset Gradient Overlay mimicking Nawada Sky -->
+            <div class="absolute inset-0 bg-gradient-to-b from-[#0b0f19]/30 via-[#0b0f19]/60 to-[#0b0f19] z-10"></div>
+            <div class="absolute inset-0 bg-black/40 z-10"></div>
+            <!-- Dynamic Structural Background Mock -->
+            <img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1920&q=80" class="w-full h-full object-cover filter brightness-75 scale-105" alt="Mall Exterior Cinematic Backing">
+        </div>
+
+        <!-- Hero Content Box -->
+        <div class="relative z-20 max-w-4xl mx-auto text-center px-4 sm:px-6 transform -translate-y-4">
+            <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-amber-400/30 bg-amber-400/10 text-amber-400 text-xs font-semibold tracking-wider uppercase mb-6 backdrop-blur-md">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Now Open Near Khuri Bridge
+            </span>
+            <h1 class="font-luxury text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-4">
+                WELCOME TO <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-500">YUSRA MALL</span>
+            </h1>
+            <p class="text-base sm:text-xl text-slate-300 font-light tracking-wide max-w-2xl mx-auto mb-10">
+                Experience the Ultimate Destination for High-End Fashion, Global Dining, & Immersive Digital Entertainment in Nawada.
+            </p>
+
+            <!-- Advanced AI Search Bar -->
+            <div class="max-w-2xl mx-auto bg-slate-900/90 p-2 rounded-2xl border border-slate-700/60 shadow-2xl backdrop-blur-md mb-8 flex flex-col sm:flex-row gap-2">
+                <div class="flex-1 flex items-center px-3 gap-2">
+                    <svg class="w-5 h-5 text-amber-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                    <input type="text" id="ai-search-input" placeholder="Search brands, cuisines, or zones... (e.g. Pista House, Adidas, Game Zone)" class="w-full bg-transparent border-none text-slate-200 placeholder-slate-500 focus:outline-none text-sm py-2">
+                </div>
+                <button class="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 text-slate-950 font-semibold px-6 py-2.5 rounded-xl text-sm transition-all tracking-wide">
+                    Explore Now
+                </button>
+            </div>
+
+            <!-- Dynamic Fast-Action Chips -->
+            <div class="flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm">
+                <a href="#directory" class="px-4 py-2 rounded-full border border-slate-800 bg-slate-900/60 hover:border-amber-400/50 hover:bg-slate-900 text-slate-300 transition-all flex items-center gap-1.5">
+                    🛍️ Today's Offers
+                </a>
+                <button onclick="openTab('entertainment')" class="px-4 py-2 rounded-full border border-slate-800 bg-slate-900/60 hover:border-amber-400/50 hover:bg-slate-900 text-slate-300 transition-all flex items-center gap-1.5">
+                    🎟️ Book Game Zone Tickets
+                </button>
+                <a href="#banquet" class="px-4 py-2 rounded-full border border-slate-800 bg-slate-900/60 hover:border-amber-400/50 hover:bg-slate-900 text-slate-300 transition-all flex items-center gap-1.5">
+                    🏨 Book Banquet
+                </a>
+                <a href="#directory" class="px-4 py-2 rounded-full border border-amber-400/40 bg-amber-400/5 hover:bg-amber-400/10 text-amber-400 transition-all flex items-center gap-1.5 font-medium shadow-sm shadow-amber-400/5">
+                    🗺️ Interactive 3D Map
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. EXPLORE OUR ZONES -->
+    <section id="explore" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-30">
+        <div class="text-center mb-16">
+            <h2 class="font-luxury text-3xl sm:text-5xl font-bold tracking-tight text-white mb-3">EXPLORE OUR ZONES</h2>
+            <div class="h-1 w-12 bg-amber-400 mx-auto rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <!-- Category Card 1: Fashion -->
+            <div class="group relative rounded-2xl overflow-hidden bg-slate-900/40 border border-slate-800/80 hover:border-amber-400/30 transition-all duration-300 flex flex-col justify-end h-80 p-6">
+                <div class="absolute inset-0 z-0">
+                    <img src="images/fashion.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 filter brightness-50" alt="Fashion Zone">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+                </div>
+                <div class="relative z-10">
+                    <span class="text-[10px] tracking-widest font-bold text-amber-400 uppercase mb-1 block">Trending Styles</span>
+                    <h3 class="font-luxury text-xl font-bold text-white mb-2">Fashion & Lifestyle</h3>
+                    <p class="text-xs text-slate-400 mb-4 line-clamp-2">Mufti, Levi's, Adidas, Pepe Jeans, Raymond & more premier hubs.</p>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="text-[10px] bg-slate-800 px-2 py-0.5 rounded text-slate-300">Adidas</span>
+                        <span class="text-[10px] bg-slate-800 px-2 py-0.5 rounded text-slate-300">Levi's</span>
+                        <span class="text-[10px] bg-slate-800 px-2 py-0.5 rounded text-slate-300">Mufti</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category Card 2: Dining -->
+            <div class="group relative rounded-2xl overflow-hidden bg-slate-900/40 border border-slate-800/80 hover:border-amber-400/30 transition-all duration-300 flex flex-col justify-end h-80 p-6">
+                <div class="absolute inset-0 z-0">
+                    <img src="images/dining.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 filter brightness-50" alt="Dining Zone">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+                </div>
+                <div class="relative z-10">
+                    <span class="text-[10px] tracking-widest font-bold text-amber-400 uppercase mb-1 block">Gourmet Cuisines</span>
+                    <h3 class="font-luxury text-xl font-bold text-white mb-2">Dining & Food Court</h3>
+                    <p class="text-xs text-slate-400 mb-4 line-clamp-2">Savor legendary Dum Ke Roat at Pista House, pastries from Cake Palace & AFC Fast Food.</p>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="text-[10px] bg-slate-800 px-2 py-0.5 rounded text-slate-300">Pista House</span>
+                        <span class="text-[10px] bg-slate-800 px-2 py-0.5 rounded text-slate-300">AFC Food</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category Card 3: Entertainment -->
+            <div class="group relative rounded-2xl overflow-hidden bg-slate-900/40 border border-slate-800/80 hover:border-amber-400/30 transition-all duration-300 flex flex-col justify-end h-80 p-6">
+                <div class="absolute inset-0 z-0">
+                    <img src="images/itert.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 filter brightness-50" alt="Entertainment Zone">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+                </div>
+                <div class="relative z-10">
+                    <span class="text-[10px] tracking-widest font-bold text-amber-400 uppercase mb-1 block">Kids & Arcade</span>
+                    <h3 class="font-luxury text-xl font-bold text-white mb-2">Game Zone & Play</h3>
+                    <p class="text-xs text-slate-400 mb-4 line-clamp-2">Your interactive digital playground awaits. Premium fun realms for families.</p>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="text-[10px] bg-slate-800 px-2 py-0.5 rounded text-slate-300">Arcades</span>
+                        <span class="text-[10px] bg-amber-400/20 text-amber-300 px-2 py-0.5 rounded">Upcoming</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category Card 4: Luxury -->
+            <div class="group relative rounded-2xl overflow-hidden bg-slate-900/40 border border-slate-800/80 hover:border-amber-400/30 transition-all duration-300 flex flex-col justify-end h-80 p-6">
+                <div class="absolute inset-0 z-0">
+                    <img src="images/luxury1.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 filter brightness-50" alt="Luxury Zone">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+                </div>
+                <div class="relative z-10">
+                    <span class="text-[10px] tracking-widest font-bold text-amber-400 uppercase mb-1 block">Exquisite Jewels</span>
+                    <h3 class="font-luxury text-xl font-bold text-white mb-2">Luxury & Jewelry</h3>
+                    <p class="text-xs text-slate-400 mb-4 line-clamp-2">Expressions of love with Senco Gold & Diamonds' curated craft.</p>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="text-[10px] bg-slate-800 px-2 py-0.5 rounded text-slate-300">Senco Gold</span>
+                        <span class="text-[10px] bg-slate-800 px-2 py-0.5 rounded text-slate-300">Premium</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 4. INTERACTIVE 3D DIRECTORY MAP PIPELINE -->
+    <section id="directory" class="py-20 bg-slate-950 border-y border-slate-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+                
+                <!-- Left Control: Floor Switcher Details -->
+                <div class="space-y-6">
+                    <div>
+                        <span class="text-xs font-bold text-amber-400 uppercase tracking-widest block mb-1">Smart Infrastructure</span>
+                        <h2 class="font-luxury text-3xl sm:text-4xl font-bold text-white">Interactive Directory</h2>
+                        <p class="text-slate-400 text-sm mt-3 leading-relaxed">
+                            Navigate the layers of Yusra Mall effortlessly. Switch floors to locate groceries, high fashion counters, premium banquet slots, or the gaming wings.
+                        </p>
+                    </div>
+
+                    <!-- Floor Selection Array -->
+                    <div class="flex flex-col gap-3">
+                        <button onclick="switchFloor('ground')" id="floor-ground-btn" class="floor-btn px-5 py-3 rounded-xl border border-amber-400/40 bg-amber-400/10 text-left text-sm font-semibold text-amber-400 transition-all flex justify-between items-center">
+                            <span>Ground Floor: Retails & Groceries</span>
+                            <span class="text-xs bg-amber-400 text-slate-950 px-2 py-0.5 rounded font-mono">L0</span>
+                        </button>
+                        <button onclick="switchFloor('first')" id="floor-first-btn" class="floor-btn px-5 py-3 rounded-xl border border-slate-850 bg-slate-900/40 text-left text-sm font-semibold text-slate-400 hover:border-slate-700 transition-all flex justify-between items-center">
+                            <span>First Floor: Food & Gaming Arena</span>
+                            <span class="text-xs bg-slate-800 text-slate-400 px-2 py-0.5 rounded font-mono">L1</span>
+                        </button>
+                        <button onclick="switchFloor('second')" id="floor-second-btn" class="floor-btn px-5 py-3 rounded-xl border border-slate-850 bg-slate-900/40 text-left text-sm font-semibold text-slate-400 hover:border-slate-700 transition-all flex justify-between items-center">
+                            <span>Second Floor: Hotel & Banquet Hall</span>
+                            <span class="text-xs bg-slate-800 text-slate-400 px-2 py-0.5 rounded font-mono">L2</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Side: Interactive Floor Content Render -->
+                <div class="lg:col-span-2 bg-[#0d1322] border border-slate-800/80 rounded-2xl p-6 sm:p-8 min-h-[350px] relative flex flex-col justify-between shadow-inner">
+                    <div class="absolute top-4 right-4 text-[10px] text-slate-500 uppercase tracking-wider font-mono">
+                        Active Layer Simulator
+                    </div>
+                    
+                    <!-- Dynamic Floor View Content Block -->
+                    <div id="floor-content" class="transition-all duration-300">
+                        <!-- Ground floor view loaded by default -->
+                        <h4 class="text-lg font-bold text-slate-100 flex items-center gap-2 mb-6">
+                            <span class="w-2 h-2 rounded-full bg-amber-400"></span> Ground Floor Active Directory
+                        </h4>
+                        
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                            <div class="p-4 bg-slate-900/80 rounded-xl border border-slate-800 text-center hover:border-amber-400/20 transition-all">
+                                <p class="font-bold text-slate-200">Shoprite</p>
+                                <span class="text-[10px] text-slate-500">Mega Grocery Anchor</span>
+                            </div>
+                            <div class="p-4 bg-slate-900/80 rounded-xl border border-slate-800 text-center hover:border-amber-400/20 transition-all">
+                                <p class="font-bold text-slate-200">Senco Gold</p>
+                                <span class="text-[10px] text-slate-500">Fine Diamonds & Jewelry</span>
+                            </div>
+                            <div class="p-4 bg-slate-900/80 rounded-xl border border-slate-800 text-center hover:border-amber-400/20 transition-all">
+                                <p class="font-bold text-slate-200">Mufti</p>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Yusra Mall Nawada</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-luxury { font-family: 'Playfair Display', serif; }
+        /* Gallery Hover Effects */
+        .gallery-img { transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1); }
+        .gallery-item:hover .gallery-img { transform: scale(1.1); }
+        /* Hide scrollbar for nav */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-[#0b0f19] text-slate-100 overflow-x-hidden">
+
+    <!-- HEADER WITH HAMBURGER MENU -->
+    <header class="sticky top-0 z-50 backdrop-blur-xl bg-[#0b0f19]/95 border-b border-slate-800/60 shadow-lg shadow-black/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+
+            <!-- Branding Logo -->
+            <a href="index.html" class="flex items-center space-x-3 cursor-pointer group shrink-0">
+                <img src="images/yusramall.png"
+                     onerror="this.style.display='none'; document.getElementById('text-logo').style.display='flex';"
+                     alt="Yusra Mall Logo" class="h-10 sm:h-12 object-contain group-hover:scale-105 transition-transform">
+                
+                <div id="text-logo" class="hidden items-center space-x-3">
+                    <div class="h-10 w-10 sm:h-11 sm:w-11 bg-gradient-to-br from-amber-400 to-amber-600 rounded-xl flex items-center justify-center">
+                        <span class="font-luxury text-lg sm:text-xl font-bold text-slate-950">YM</span>
+                    </div>
+                    <div>
+                        <span class="font-luxury text-lg font-bold tracking-widest text-amber-400">YUSRA MALL</span>
+                        <p class="text-[9px] text-slate-400 uppercase tracking-widest -mt-1">Nawada, Bihar</p>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation (Hidden on Mobile) -->
+            <nav class="hidden sm:flex items-center space-x-8 text-sm font-medium tracking-wide">
+                <a href="index.html" class="text-amber-400 border-b-2 border-amber-400 pb-1">HOME</a>
+                <a href="about.html" class="text-slate-300 hover:text-amber-400 transition-colors pb-1">ABOUT US</a>
+                <a href="gallery.html" class="text-slate-300 hover:text-amber-400 transition-colors pb-1">GALLERY</a>
+                <a href="contact.html" class="text-slate-300 hover:text-amber-400 transition-colors pb-1">CONTACT US</a>
+            </nav>
+
+            <!-- Hamburger Button (Visible only on Mobile) -->
+            <button id="mobile-btn" class="sm:hidden text-amber-400 hover:text-white focus:outline-none p-2">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+
+        </div>
+
+        <!-- Mobile Dropdown Menu (Initially Hidden) -->
+        <div id="mobile-menu" class="hidden sm:hidden bg-[#0d1322] border-t border-slate-800 shadow-2xl absolute w-full left-0">
+            <div class="px-6 py-6 flex flex-col space-y-5 text-base font-medium tracking-wide">
+                <a href="index.html" class="text-amber-400 border-l-4 border-amber-400 pl-3">HOME</a>
+                <a href="about.html" class="text-slate-300 hover:text-amber-400 pl-4 transition-colors">ABOUT US</a>
+                <a href="gallery.html" class="text-slate-300 hover:text-amber-400 pl-4 transition-colors">GALLERY</a>
+                <a href="contact.html" class="text-slate-300 hover:text-amber-400 pl-4 transition-colors">CONTACT US</a>
+            </div>
+        </div>
+    </header>  
+
+    <!-- JavaScript for Toggle -->
+    <script>
+        const btn = document.getElementById('mobile-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+
+    <!-- PAGE HERO -->
+    <section class="relative py-16 border-b border-slate-900 bg-gradient-to-b from-slate-900/50 to-[#0b0f19]">
+        <div class="max-w-4xl mx-auto text-center px-4">
+            <h1 class="font-luxury text-4xl sm:text-5xl font-bold tracking-tight text-white mb-4">
+                Mall Gallery
+            </h1>
+            <p class="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto">
+                Take a visual tour of Yusra Mall. Explore our beautifully designed floors, spacious interiors, and stunning architecture.
+            </p>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Ground Floor View -->
+        <div class="mb-16">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="h-[2px] flex-1 bg-gradient-to-r from-transparent via-slate-700 to-amber-500/50"></div>
+                <h2 class="font-luxury text-2xl sm:text-3xl font-bold text-white">Ground Floor View</h2>
+                <div class="h-[2px] flex-1 bg-gradient-to-l from-transparent via-slate-700 to-amber-500/50"></div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                <!-- Front View -->
+                <div class="gallery-item relative overflow-hidden rounded-2xl group border border-slate-800/60 shadow-lg bg-slate-900 aspect-square sm:aspect-auto sm:h-64">
+                    <img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=600&q=80" alt="Ground Floor Front View" class="gallery-img w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0b0f19] via-transparent to-transparent opacity-90"></div>
+                    <div class="absolute bottom-0 left-0 p-5">
+                        <p class="text-amber-400 font-semibold tracking-wide text-sm sm:text-base">Front View</p>
+                    </div>
+                </div>
+                <!-- Left View -->
+                <div class="gallery-item relative overflow-hidden rounded-2xl group border border-slate-800/60 shadow-lg bg-slate-900 aspect-square sm:aspect-auto sm:h-64">
+                    <img src="https://images.unsplash.com/photo-1581575489814-72213768225e?w=600&q=80" alt="Ground Floor Left View" class="gallery-img w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0b0f19] via-transparent to-transparent opacity-90"></div>
+                    <div class="absolute bottom-0 left-0 p-5">
+                        <p class="text-amber-400 font-semibold tracking-wide text-sm sm:text-base">Left View</p>
+                    </div>
+                </div>
+                <!-- Right View -->
+                <div class="gallery-item relative overflow-hidden rounded-2xl group border border-slate-800/60 shadow-lg bg-slate-900 aspect-square sm:aspect-auto sm:h-64">
+                    <img src="https://images.unsplash.com/photo-1567359781514-3b964e2b04d6?w=600&q=80" alt="Ground Floor Right View" class="gallery-img w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0b0f19] via-transparent to-transparent opacity-90"></div>
+                    <div class="absolute bottom-0 left-0 p-5">
+                        <p class="text-amber-400 font-semibold tracking-wide text-sm sm:text-base">Right View</p>
+                    </div>
+                </div>
+                <!-- Back View -->
+                <div class="gallery-item relative overflow-hidden rounded-2xl group border border-slate-800/60 shadow-lg bg-slate-900 aspect-square sm:aspect-auto sm:h-64">
+                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80" alt="Ground Floor Back View" class="gallery-img w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0b0f19] via-transparent to-transparent opacity-90"></div>
+                    <div class="absolute bottom-0 left-0 p-5">
+                        <p class="text-amber-400 font-semibold tracking-wide text-sm sm:text-base">Back View</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 1st Floor View -->
+        <div class="mb-16">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="h-[2px] flex-1 bg-gradient-to-r from-transparent via-slate-700 to-amber-500/50"></div>
+                <h2 class="font-luxury text-2xl sm:text-3xl font-bold text-white">1st Floor View</h2>
+                <div class="h-[2px] flex-1 bg-gradient-to-l from-transparent via-slate-700 to-amber-500/50"></div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                <!-- Front View -->
+                <div class="gallery-item relative overflow-hidden rounded-2xl group border border-slate-800/60 shadow-lg bg-slate-900 aspect-square sm:aspect-auto sm:h-64">
+                    <img src="https://images.unsplash.com/photo-1555529771-835f59fc5efe?w=600&q=80" alt="1st Floor Front View" class="gallery-img w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0b0f19] via-transparent to-transparent opacity-90"></div>
+                    <div class="absolute bottom-0 left-0 p-5">
+                        <p class="text-amber-400 font-semibold tracking-wide text-sm sm:text-base">Front View</p>
+                    </div>
+                </div>
+                <!-- Left View -->
+                <div class="gallery-item relative overflow-hidden rounded-2xl group border border-slate-800/60 shadow-lg bg-slate-900 aspect-square sm:aspect-auto sm:h-64">
+                    <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=600&q=80" alt="1st Floor Left View" class="gallery-img w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0b0f19] via-transparent to-transparent opacity-90"></div>
+                    <div class="absolute bottom-0 left-0 p-5">
+                        <p class="text-amber-400 font-semibold tracking-wide text-sm sm:text-base">Left View</p>
+                    </div>
+                </div>
+                <!-- Right View -->
+                <div class="gallery-item relative overflow-hidden rounded-2xl group border border-slate-800/60 shadow-lg bg-slate-900 aspect-square sm:aspect-auto sm:h-64">
+                    <img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=600&q=80" alt="1st Floor Right View" class="gallery-img w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0b0f19] via-transparent to-transparent opacity-90"></div>
+                    <div class="absolute bottom-0 left-0 p-5">
+                        <p class="text-amber-400 font-semibold tracking-wide text-sm sm:text-base">Right View</p>
+                    </div>
+                </div>
+                <!-- Back View -->
+                <div class="gallery-item relative overflow-hidden rounded-2xl group border border-slate-800/60 shadow-lg bg-slate-900 aspect-square sm:aspect-auto sm:h-64">
+                    <img src="https://images.unsplash.com/photo-1580981997368-80e2277d0794?w=600&q=80" alt="1st Floor Back View" class="gallery-img w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0b0f19] via-transparent to-transparent opacity-90"></div>
+                    <div class="absolute bottom-0 left-0 p-5">
+                        <p class="text-amber-400 font-semibold tracking-wide text-sm sm:text-base">Back View</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2nd Floor View -->
+        <div class="mb-16">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="h-[2px] flex-1 bg-gradient-to-r from-transparent via-slate-700 to-amber-500/50"></div>
+                <h2 class="font-luxury text-2xl sm:text-3xl font-bold text-white">2nd Floor View</h2>
+                <div class="h-[2px] flex-1 bg-gradient-to-l from-transparent via-slate-700 to-amber-500/50"></div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                <!-- Front View -->
+                <div class="gallery-item relative overflow-hidden rounded-2xl group border border-slate-800/60 shadow-lg bg-slate-900 aspect-square sm:aspect-auto sm:h-64">
+                    <img src="https://images.unsplash.com/photo-1595938833959-17ce2848c412?w=600&q=80" alt="2nd Floor Front View" class="gallery-img w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0b0f19] via-transparent to-transparent opacity-90"></div>
+                    <div class="absolute bottom-0 left-0 p-5">
+                        <p class="text-amber-400 font-semibold tracking-wide text-sm sm:text-base">Front View</p>
+                    </div>
+                </div>
+                <!-- Left View -->
+                <div class="gallery-item relative overflow-hidden rounded-2xl group border border-slate-800/60 shadow-lg bg-slate-900 aspect-square sm:aspect-auto sm:h-64">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80" alt="2nd Floor Left View" class="gallery-img w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0b0f19] via-transparent to-transparent opacity-90"></div>
+                    <div class="absolute bottom-0 left-0 p-5">
+                        <p class="text-amber-400 font-semibold tracking-wide text-sm sm:text-base">Left View</p>
+                    </div>
+                </div>
+                <!-- Right View -->
+                <div class="gallery-item relative overflow-hidden rounded-2xl group border border-slate-800/60 shadow-lg bg-slate-900 aspect-square sm:aspect-auto sm:h-64">
+                    <img src="https://images.unsplash.com/photo-1541845157-a6d2d100c931?w=600&q=80" alt="2nd Floor Right View" class="gallery-img w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0b0f19] via-transparent to-transparent opacity-90"></div>
+                    <div class="absolute bottom-0 left-0 p-5">
+                        <p class="text-amber-400 font-semibold tracking-wide text-sm sm:text-base">Right View</p>
+                    </div>
+                </div>
+                <!-- Back View -->
+                <div class="gallery-item relative overflow-hidden rounded-2xl group border border-slate-800/60 shadow-lg bg-slate-900 aspect-square sm:aspect-auto sm:h-64">
+                    <img src="https://images.unsplash.com/photo-1481014164670-65e128df6e68?w=600&q=80" alt="2nd Floor Back View" class="gallery-img w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0b0f19] via-transparent to-transparent opacity-90"></div>
+                    <div class="absolute bottom-0 left-0 p-5">
+                        <p class="text-amber-400 font-semibold tracking-wide text-sm sm:text-base">Back View</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3rd Floor View -->
+        <div class="mb-8">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="h-[2px] flex-1 bg-gradient-to-r from-transparent via-slate-700 to-amber-500/50"></div>
+                <h2 class="font-luxury text-2xl sm:text-3xl font-bold text-white">3rd Floor View</h2>
+                <div class="h-[2px] flex-1 bg-gradient-to-l from-transparent via-slate-700 to-amber-500/50"></div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                <!-- Front View -->
+                <div class="gallery-item relative overflow-hidden rounded-2xl group border border-slate-800/60 shadow-lg bg-slate-900 aspect-square sm:aspect-auto sm:h-64">
+                    <img src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=600&q=80" alt="3rd Floor Front View" class="gallery-img w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0b0f19] via-transparent to-transparent opacity-90"></div>
+                    <div class="absolute bottom-0 left-0 p-5">
+                        <p class="text-amber-400 font-semibold tracking-wide text-sm sm:text-base">Front View</p>
+                    </div>
+                </div>
+                <!-- Left View -->
+                <div class="gallery-item relative overflow-hidden rounded-2xl group border border-slate-800/60 shadow-lg bg-slate-900 aspect-square sm:aspect-auto sm:h-64">
+                    <img src="https://images.unsplash.com/photo-1582736181635-41e976db57f0?w=600&q=80" alt="3rd Floor Left View" class="gallery-img w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0b0f19] via-transparent to-transparent opacity-90"></div>
+                    <div class="absolute bottom-0 left-0 p-5">
+                        <p class="text-amber-400 font-semibold tracking-wide text-sm sm:text-base">Left View</p>
+                    </div>
+                </div>
+                <!-- Right View -->
+                <div class="gallery-item relative overflow-hidden rounded-2xl group border border-slate-800/60 shadow-lg bg-slate-900 aspect-square sm:aspect-auto sm:h-64">
+                    <img src="https://images.unsplash.com/photo-1517502884422-41eaead166d4?w=600&q=80" alt="3rd Floor Right View" class="gallery-img w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0b0f19] via-transparent to-transparent opacity-90"></div>
+                    <div class="absolute bottom-0 left-0 p-5">
+                        <p class="text-amber-400 font-semibold tracking-wide text-sm sm:text-base">Right View</p>
+                    </div>
+                </div>
+                <!-- Back View -->
+                <div class="gallery-item relative overflow-hidden rounded-2xl group border border-slate-800/60 shadow-lg bg-slate-900 aspect-square sm:aspect-auto sm:h-64">
+                    <img src="https://images.unsplash.com/photo-1533929736458-ca588d08c8be?w=600&q=80" alt="3rd Floor Back View" class="gallery-img w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0b0f19] via-transparent to-transparent opacity-90"></div>
+                    <div class="absolute bottom-0 left-0 p-5">
+                        <p class="text-amber-400 font-semibold tracking-wide text-sm sm:text-base">Back View</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 border-t border-slate-900 py-10 text-center">
+        <p class="text-xs text-slate-600">
+            © 2026 Yusra Mall. All rights reserved. Designed & Maintained by Yusra Mall
+        </p>
+    </footer>
+
+</body>
+</html>

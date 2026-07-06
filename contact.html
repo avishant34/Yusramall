@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Yusra Mall Nawada</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-luxury { font-family: 'Playfair Display', serif; }
+        /* Custom scrollbar for form textarea */
+        textarea::-webkit-scrollbar { width: 8px; }
+        textarea::-webkit-scrollbar-track { background: #0f172a; }
+        textarea::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+    </style>
+</head>
+<body class="bg-[#0b0f19] text-slate-100 overflow-x-hidden">
+
+    <!-- HEADER WITH HAMBURGER MENU -->
+    <header class="sticky top-0 z-50 backdrop-blur-xl bg-[#0b0f19]/95 border-b border-slate-800/60 shadow-lg shadow-black/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+
+            <!-- Branding Logo -->
+            <a href="index.html" class="flex items-center space-x-3 cursor-pointer group shrink-0">
+                <img src="images/yusramall.png"
+                     onerror="this.style.display='none'; document.getElementById('text-logo').style.display='flex';"
+                     alt="Yusra Mall Logo" class="h-10 sm:h-12 object-contain group-hover:scale-105 transition-transform">
+                
+                <div id="text-logo" class="hidden items-center space-x-3">
+                    <div class="h-10 w-10 sm:h-11 sm:w-11 bg-gradient-to-br from-amber-400 to-amber-600 rounded-xl flex items-center justify-center">
+                        <span class="font-luxury text-lg sm:text-xl font-bold text-slate-950">YM</span>
+                    </div>
+                    <div>
+                        <span class="font-luxury text-lg font-bold tracking-widest text-amber-400">YUSRA MALL</span>
+                        <p class="text-[9px] text-slate-400 uppercase tracking-widest -mt-1">Nawada, Bihar</p>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation (Hidden on Mobile) -->
+            <nav class="hidden sm:flex items-center space-x-8 text-sm font-medium tracking-wide">
+                <a href="index.html" class="text-amber-400 border-b-2 border-amber-400 pb-1">HOME</a>
+                <a href="about.html" class="text-slate-300 hover:text-amber-400 transition-colors pb-1">ABOUT US</a>
+                <a href="gallery.html" class="text-slate-300 hover:text-amber-400 transition-colors pb-1">GALLERY</a>
+                <a href="contact.html" class="text-slate-300 hover:text-amber-400 transition-colors pb-1">CONTACT US</a>
+            </nav>
+
+            <!-- Hamburger Button (Visible only on Mobile) -->
+            <button id="mobile-btn" class="sm:hidden text-amber-400 hover:text-white focus:outline-none p-2">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+
+        </div>
+
+        <!-- Mobile Dropdown Menu (Initially Hidden) -->
+        <div id="mobile-menu" class="hidden sm:hidden bg-[#0d1322] border-t border-slate-800 shadow-2xl absolute w-full left-0">
+            <div class="px-6 py-6 flex flex-col space-y-5 text-base font-medium tracking-wide">
+                <a href="index.html" class="text-amber-400 border-l-4 border-amber-400 pl-3">HOME</a>
+                <a href="about.html" class="text-slate-300 hover:text-amber-400 pl-4 transition-colors">ABOUT US</a>
+                <a href="gallery.html" class="text-slate-300 hover:text-amber-400 pl-4 transition-colors">GALLERY</a>
+                <a href="contact.html" class="text-slate-300 hover:text-amber-400 pl-4 transition-colors">CONTACT US</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- JavaScript for Toggle -->
+    <script>
+        const btn = document.getElementById('mobile-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+
+    <!-- PAGE HERO -->
+    <section class="relative py-16 lg:py-24 border-b border-slate-900 bg-gradient-to-b from-slate-900/50 to-[#0b0f19]">
+        <div class="max-w-4xl mx-auto text-center px-4">
+            <h1 class="font-luxury text-4xl sm:text-5xl font-bold tracking-tight text-white mb-4">
+                Get In Touch
+            </h1>
+            <p class="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto">
+                Whether you're looking to open a store, book our grand banquet, or just have a general query, our team is here to assist you.
+            </p>
+        </div>
+    </section>
+
+    <!-- CONTACT DETAILS & FORM SECTION -->
+    <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            
+            <!-- LEFT COLUMN: CONTACT INFORMATION -->
+            <div class="lg:col-span-5 space-y-8">
+                
+                <!-- Location -->
+                <div class="bg-slate-900/40 p-6 rounded-2xl border border-slate-800 hover:border-amber-400/30 transition-all flex items-start gap-4">
+                    <div class="p-3 bg-slate-800/80 text-amber-400 rounded-xl">📍</div>
+                    <div>
+                        <h3 class="text-white font-semibold mb-1">Yusra Mall Nawada</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Khuri Bridge, Nawada,<br>Bihar, 805110
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Call Us / Departments -->
+                <div class="bg-slate-900/40 p-6 rounded-2xl border border-slate-800 hover:border-amber-400/30 transition-all">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="p-3 bg-slate-800/80 text-amber-400 rounded-xl">📞</div>
+                        <h3 class="text-white font-semibold">Phone Directory</h3>
+                    </div>
+                    
+                    <div class="space-y-5">
+                        <div class="border-b border-slate-800 pb-4">
+                            <p class="text-xs text-amber-400 font-bold uppercase tracking-wider mb-1">For Renting & Opening of Stores</p>
+                            <a href="tel:+919934353415" class="text-slate-300 hover:text-white transition-colors text-sm flex items-center gap-2">
+                                +91 99343 53415 
+                                <span class="text-[10px] bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/30">WhatsApp Available</span>
+                            </a>
+                        </div>
+                        <div class="border-b border-slate-800 pb-4">
+                            <p class="text-xs text-amber-400 font-bold uppercase tracking-wider mb-1">Hotel & Banquet Hall Manager</p>
+                            <a href="tel:+917533051275" class="text-slate-300 hover:text-white transition-colors text-sm flex items-center gap-2">
+                                +91 75330 51275
+                                <span class="text-[10px] bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/30">WhatsApp Available</span>
+                            </a>
+                        </div>
+                        <div>
+                            <p class="text-xs text-amber-400 font-bold uppercase tracking-wider mb-1">IT Head</p>
+                            <a href="tel:+918002517050" class="text-slate-300 hover:text-white transition-colors text-sm flex items-center gap-2">
+                                +91 80025 17050
+                                <span class="text-[10px] bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/30">WhatsApp Available</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Email Address -->
+                <div class="bg-slate-900/40 p-6 rounded-2xl border border-slate-800 hover:border-amber-400/30 transition-all flex items-start gap-4">
+                    <div class="p-3 bg-slate-800/80 text-amber-400 rounded-xl">📧</div>
+                    <div class="space-y-2">
+                        <h3 class="text-white font-semibold mb-1">Email Addresses</h3>
+                        <p class="text-sm">
+                            <span class="text-slate-500">Official Email:</span><br>
+                            <a href="mailto:info@yusramall.com" class="text-slate-300 hover:text-amber-400 transition-colors">info@yusramall.com</a>
+                        </p>
+                        <p class="text-sm">
+                            <span class="text-slate-500">For Queries:</span><br>
+                            <a href="mailto:yusramall786@gmail.com" class="text-slate-300 hover:text-amber-400 transition-colors">yusramall786@gmail.com</a>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- RIGHT COLUMN: QUERY FORM -->
+            <div class="lg:col-span-7">
+                <div class="bg-[#0d1322] border border-slate-800 p-8 sm:p-10 rounded-3xl shadow-2xl relative overflow-hidden">
+                    <!-- Decorative glow -->
+                    <div class="absolute -top-20 -right-20 w-64 h-64 bg-amber-500/5 rounded-full blur-3xl pointer-events-none"></div>
+                    
+                    <h3 class="font-luxury text-2xl font-bold text-white mb-2">Send us a Message</h3>
+                    <p class="text-slate-400 text-sm mb-8">Fill out the query form below and our management team will get back to you promptly.</p>
+
+                    <form action="#" method="POST" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <!-- Name -->
+                            <div class="space-y-1.5">
+                                <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Full Name</label>
+                                <input type="text" placeholder="John Doe" class="w-full bg-slate-900 border border-slate-700 text-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-all text-sm">
+                            </div>
+                            <!-- Phone -->
+                            <div class="space-y-1.5">
+                                <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Phone Number</label>
+                                <input type="tel" placeholder="+91 00000 00000" class="w-full bg-slate-900 border border-slate-700 text-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-all text-sm">
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Email Address</label>
+                            <input type="email" placeholder="john@example.com" class="w-full bg-slate-900 border border-slate-700 text-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-all text-sm">
+                        </div>
+
+                        <!-- Department Selection -->
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Related To</label>
+                            <select class="w-full bg-slate-900 border border-slate-700 text-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-all text-sm appearance-none">
+                                <option value="" disabled selected>Select a department...</option>
+                                <option value="renting">Store Renting & Opening</option>
+                                <option value="banquet">Hotel & Banquet Booking</option>
+                                <option value="general">General Inquiry</option>
+                            </select>
+                        </div>
+
+                        <!-- Message -->
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Your Message</label>
+                            <textarea rows="4" placeholder="How can we help you?" class="w-full bg-slate-900 border border-slate-700 text-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-all text-sm resize-none"></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="button" class="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold px-6 py-3.5 rounded-xl text-sm transition-all shadow-lg shadow-amber-500/20 transform active:scale-[0.98]">
+                            Submit Query
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GOOGLE MAPS EMBED -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <div class="w-full h-80 sm:h-96 bg-slate-900 rounded-3xl border border-slate-800 overflow-hidden relative">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3621.579051515286!2d85.5342082!3d24.8783424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f257a3e79bd5df%3A0xb35a0937a0f67104!2sKhuri%20Bridge%2C%20Nawada%2C%20Bihar!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                width="100%" 
+                height="100%" 
+                style="border:0; filter: invert(90%) hue-rotate(180deg);" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <!-- Small overlay to maintain aesthetic -->
+            <div class="absolute inset-0 pointer-events-none border border-slate-800 rounded-3xl"></div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 border-t border-slate-900 py-10 text-center">
+        <div class="flex justify-center gap-6 mb-6">
+            <!-- Social Mocks -->
+            <a href="#" class="text-slate-500 hover:text-amber-400 transition-colors">Facebook</a>
+            <a href="#" class="text-slate-500 hover:text-amber-400 transition-colors">X-Twitter</a>
+            <a href="#" class="text-slate-500 hover:text-amber-400 transition-colors">YouTube</a>
+            <a href="#" class="text-slate-500 hover:text-amber-400 transition-colors">Instagram</a>
+        </div>
+        <p class="text-xs text-slate-600">
+            © 2026 Yusra Mall. All rights reserved. Designed & Maintained by Yusra Mall
+        </p>
+    </footer>
+
+</body>
+</html>
